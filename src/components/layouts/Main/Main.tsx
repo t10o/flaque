@@ -14,7 +14,7 @@ export const Main = ({ children }: Props): JSX.Element => {
   return (
     <main>
       {currentPage.name && (
-        <div className={clsx("mt-20", "text-3xl", "text-center")}>
+        <div className={clsx("my-20", "text-3xl", "text-center")}>
           {currentPage.name}
         </div>
       )}
