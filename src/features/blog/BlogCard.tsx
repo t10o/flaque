@@ -32,7 +32,7 @@ export const BlogCard = ({
         className={clsx(
           "mr-8",
           "min-w-[72px]",
-          "h-[72px]",
+          "h-full",
           "relative",
           "flex",
           "justify-center",

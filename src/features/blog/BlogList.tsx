@@ -17,7 +17,7 @@ export const BlogList = ({ children }: Props): JSX.Element => {
         "px-4",
         "max-w-7xl",
         "mx-auto",
-        "auto-rows-[minmax(12rem,max-content)]"
+        "auto-rows-[minmax(11rem,max-content)]"
       )}
     >
       {children}
