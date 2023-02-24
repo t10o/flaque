@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { ReactNode } from "react";
 
 import { Footer, Header } from "@/components/layouts";
@@ -11,7 +12,7 @@ export const Layout = ({ children }: Props): JSX.Element => {
     <>
       <Header />
 
-      <main>{children}</main>
+      <main className={clsx("box-border")}>{children}</main>
 
       <Footer />
     </>
