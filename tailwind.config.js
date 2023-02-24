@@ -1,12 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [ "./src/**/*.{js,ts,jsx,tsx}" ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
-    require("@tailwindcss/line-clamp")
+    require("@tailwindcss/line-clamp"),
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "text-base": "#333333",
+      },
+    },
   },
-}
+};
