@@ -22,15 +22,14 @@ export default function Home() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  console.log(data);
-
   return (
     <>
       <BlogList>
-        {data!.posts.map(({ title, date, emoji, slug, tags }) => {
+        {data!.posts.map(({ id, title, date, emoji, slug, tags }) => {
           return (
             <>
               <BlogCard
+                key={id}
                 title={title}
                 slug={slug}
                 date={date}

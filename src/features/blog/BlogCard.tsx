@@ -23,8 +23,6 @@ export const BlogCard = ({
     codePoint.split("-")[0]
   }.svg`;
 
-  console.log(url);
-
   return (
     <Link
       className={clsx("flex", "p-4", "rounded-lg", "shadow-lg", "col-span-1")}
@@ -50,7 +48,9 @@ export const BlogCard = ({
         <div className={clsx("text-lg", "font-semibold", "mb-auto")}>
           {title}
         </div>
+
         <div>{date}</div>
+
         <div className={clsx("flex", "items-center", "mt-2")}>
           {tags.map((tag) => {
             return (
