@@ -9,10 +9,10 @@ html {
   word-spacing: 1px;
   letter-spacing: 0.06rem;
   overflow-x: hidden;
-  overflow-y: scroll
+  overflow-y: scroll;
+  background-color: #F9FCFF;
 }
 
 body {
   margin: 0;
-  color: #000;
 }
