@@ -1,6 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 
-import { BlogCard } from "@/features/blog";
+import { BlogCard, BlogList } from "@/features/blog";
 import { PostsQuery } from "@/gql/graphql";
 
 export default function Home() {
@@ -26,19 +26,21 @@ export default function Home() {
 
   return (
     <>
-      {data!.posts.map(({ title, date, emoji, slug, tags }) => {
-        return (
-          <>
-            <BlogCard
-              title={title}
-              slug={slug}
-              date={date}
-              emoji={emoji}
-              tags={tags}
-            />
-          </>
-        );
-      })}
+      <BlogList>
+        {data!.posts.map(({ title, date, emoji, slug, tags }) => {
+          return (
+            <>
+              <BlogCard
+                title={title}
+                slug={slug}
+                date={date}
+                emoji={emoji}
+                tags={tags}
+              />
+            </>
+          );
+        })}
+      </BlogList>
     </>
   );
 }
