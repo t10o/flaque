@@ -4,6 +4,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import type { AppProps } from "next/app";
 import { Noto_Sans_Javanese } from "next/font/google";
+import { RecoilRoot } from "recoil";
 
 import { Layout } from "@/components/layouts";
 
@@ -23,9 +24,11 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
 
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <RecoilRoot>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </RecoilRoot>
     </ApolloProvider>
   );
 }
