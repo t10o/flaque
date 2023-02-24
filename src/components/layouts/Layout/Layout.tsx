@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { Header } from "@/components/layouts";
+import { Footer, Header } from "@/components/layouts";
 
 interface Props {
   children: ReactNode;
@@ -12,6 +12,8 @@ export const Layout = ({ children }: Props): JSX.Element => {
       <Header />
 
       <main>{children}</main>
+
+      <Footer />
     </>
   );
 };
