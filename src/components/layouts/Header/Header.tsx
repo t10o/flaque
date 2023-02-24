@@ -1,10 +1,7 @@
 import clsx from "clsx";
-import { Rampart_One } from "next/font/google";
 import Link from "next/link";
 
 import { MENUS } from "@/constants/menus";
-
-const rampartOne = Rampart_One({ subsets: ["latin"], weight: "400" });
 
 export const Header = (): JSX.Element => {
   const headerMenu = () => {
@@ -21,15 +18,14 @@ export const Header = (): JSX.Element => {
         "justify-between",
         "h-14",
         "px-4",
-        "mt-4",
-        `${rampartOne.className}`
+        "mt-4"
       )}
     >
       <Link href="/">
         <h1 className={clsx("text-4xl")}>flaque</h1>
       </Link>
 
-      <div className={clsx("lg:flex", "items-center", "hidden")}>
+      <div className={clsx("lg:flex", "items-center", "hidden", "text-center")}>
         {headerMenu().map((menu) => {
           return (
             <Link

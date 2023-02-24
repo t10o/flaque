@@ -1,10 +1,7 @@
 import clsx from "clsx";
-import { Rampart_One } from "next/font/google";
 import Link from "next/link";
 
 import { MENUS } from "@/constants/menus";
-
-const rampartOne = Rampart_One({ subsets: ["latin"], weight: "400" });
 
 export const Footer = (): JSX.Element => {
   return (
@@ -13,7 +10,7 @@ export const Footer = (): JSX.Element => {
         {MENUS.map((menu) => {
           return (
             <Link
-              className={clsx("mx-4", "text-xl", `${rampartOne.className}`)}
+              className={clsx("mx-4", "text-xl")}
               key={menu.name}
               href={menu.href}
             >
