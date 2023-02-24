@@ -182,147 +182,6 @@
             "deprecationReason": null
           },
           {
-            "name": "coverImagePost",
-            "description": null,
-            "args": [
-              {
-                "name": "after",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "before",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "first",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "forceParentLocale",
-                "description": "Sets the locale of the resolved parent document as the only locale in the query's subtree.\n\nNote that `coverImagePost` is a model without localized fields and will not be affected directly by this argument, however the locale will be passed on to any relational fields in the query's subtree for filtering.\nFor related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.\n\nThis argument will affect any existing locale filtering defined in the query's tree for the subtree.",
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Boolean",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "last",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "locales",
-                "description": "Allows to optionally override locale filtering behaviour in the query's subtree.\n\nNote that `coverImagePost` is a model without localized fields and will not be affected directly by this argument, however the locales will be passed on to any relational fields in the query's subtree for filtering.\nFor related models with localized fields in the query's subtree, the first locale matching the provided list of locales will be returned, entries with non matching locales will be filtered out.\n\nThis argument will overwrite any existing locale filtering defined in the query's tree for the subtree.",
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "ENUM",
-                      "name": "Locale",
-                      "ofType": null
-                    }
-                  }
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "orderBy",
-                "description": null,
-                "type": {
-                  "kind": "ENUM",
-                  "name": "PostOrderByInput",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "skip",
-                "description": null,
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Int",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "where",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "PostWhereInput",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "Post",
-                    "ofType": null
-                  }
-                }
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "createdAt",
             "description": "The time the document was created",
             "args": [
@@ -1331,18 +1190,6 @@
             "deprecationReason": null
           },
           {
-            "name": "coverImagePost",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "PostCreateManyInlineInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "createdAt",
             "description": null,
             "type": {
@@ -1901,42 +1748,6 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "AuthorWhereInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "coverImagePost_every",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "PostWhereInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "coverImagePost_none",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "PostWhereInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "coverImagePost_some",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "PostWhereInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -2722,18 +2533,6 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "AuthorUpdateManyInlineInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "coverImagePost",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "PostUpdateManyInlineInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -3882,42 +3681,6 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "AuthorWhereInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "coverImagePost_every",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "PostWhereInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "coverImagePost_none",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "PostWhereInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "coverImagePost_some",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "PostWhereInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -19944,51 +19707,6 @@
             "deprecationReason": null
           },
           {
-            "name": "coverImage",
-            "description": "Upload or select a cover image to set as your Featured Image",
-            "args": [
-              {
-                "name": "forceParentLocale",
-                "description": "Sets the locale of the parent document as the first locale in the fallback locales in the query's subtree.\n\nNote that `coverImage` will be affected directly by this argument, as well as any other related models with localized fields in the query's subtree.\nThe first locale matching the provided list will be returned, localized entries that do not have the provided locale defined will be filtered out.\n\nThis argument will affect any existing locale filtering defined in the query's tree for the subtree.",
-                "type": {
-                  "kind": "SCALAR",
-                  "name": "Boolean",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
-                "name": "locales",
-                "description": "Allows to optionally override locale filtering behaviour in the query's subtree.\n\nNote that `coverImage` will be affected directly by this argument, as well as any other related models with localized fields in the query's subtree.\nThe first locale matching the provided list will be returned, localized entries that do not have the provided locale defined will be filtered out.\n\nThis argument will overwrite any existing locale filtering defined in the query's tree for the subtree.",
-                "type": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "ENUM",
-                      "name": "Locale",
-                      "ofType": null
-                    }
-                  }
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "Asset",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "createdAt",
             "description": "The time the document was created",
             "args": [],
@@ -20147,13 +19865,17 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt",
-            "description": "Add a short excerpt to summarize this post",
+            "name": "emoji",
+            "description": "Emoji",
             "args": [],
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -20760,18 +20482,6 @@
             "deprecationReason": null
           },
           {
-            "name": "coverImage",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "AssetCreateOneInlineInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "createdAt",
             "description": null,
             "type": {
@@ -20800,12 +20510,16 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt",
+            "name": "emoji",
             "description": null,
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "defaultValue": null,
             "isDeprecated": false,
@@ -21112,18 +20826,6 @@
             "deprecationReason": null
           },
           {
-            "name": "coverImage",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "AssetWhereInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "createdAt",
             "description": null,
             "type": {
@@ -21380,7 +21082,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt",
+            "name": "emoji",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -21392,7 +21094,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_contains",
+            "name": "emoji_contains",
             "description": "All values containing the given string.",
             "type": {
               "kind": "SCALAR",
@@ -21404,7 +21106,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_ends_with",
+            "name": "emoji_ends_with",
             "description": "All values ending with the given string.",
             "type": {
               "kind": "SCALAR",
@@ -21416,7 +21118,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_in",
+            "name": "emoji_in",
             "description": "All values that are contained in given list.",
             "type": {
               "kind": "LIST",
@@ -21432,7 +21134,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_not",
+            "name": "emoji_not",
             "description": "All values that are not equal to given value.",
             "type": {
               "kind": "SCALAR",
@@ -21444,7 +21146,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_not_contains",
+            "name": "emoji_not_contains",
             "description": "All values not containing the given string.",
             "type": {
               "kind": "SCALAR",
@@ -21456,7 +21158,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_not_ends_with",
+            "name": "emoji_not_ends_with",
             "description": "All values not ending with the given string",
             "type": {
               "kind": "SCALAR",
@@ -21468,7 +21170,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_not_in",
+            "name": "emoji_not_in",
             "description": "All values that are not contained in given list.",
             "type": {
               "kind": "LIST",
@@ -21484,7 +21186,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_not_starts_with",
+            "name": "emoji_not_starts_with",
             "description": "All values not starting with the given string.",
             "type": {
               "kind": "SCALAR",
@@ -21496,7 +21198,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_starts_with",
+            "name": "emoji_starts_with",
             "description": "All values starting with the given string.",
             "type": {
               "kind": "SCALAR",
@@ -22309,13 +22011,13 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_ASC",
+            "name": "emoji_ASC",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "excerpt_DESC",
+            "name": "emoji_DESC",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -22426,18 +22128,6 @@
             "deprecationReason": null
           },
           {
-            "name": "coverImage",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "AssetUpdateOneInlineInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "date",
             "description": null,
             "type": {
@@ -22450,7 +22140,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt",
+            "name": "emoji",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -22704,7 +22394,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt",
+            "name": "emoji",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -23121,18 +22811,6 @@
             "deprecationReason": null
           },
           {
-            "name": "coverImage",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "AssetWhereInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "createdAt",
             "description": null,
             "type": {
@@ -23389,7 +23067,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt",
+            "name": "emoji",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -23401,7 +23079,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_contains",
+            "name": "emoji_contains",
             "description": "All values containing the given string.",
             "type": {
               "kind": "SCALAR",
@@ -23413,7 +23091,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_ends_with",
+            "name": "emoji_ends_with",
             "description": "All values ending with the given string.",
             "type": {
               "kind": "SCALAR",
@@ -23425,7 +23103,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_in",
+            "name": "emoji_in",
             "description": "All values that are contained in given list.",
             "type": {
               "kind": "LIST",
@@ -23441,7 +23119,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_not",
+            "name": "emoji_not",
             "description": "All values that are not equal to given value.",
             "type": {
               "kind": "SCALAR",
@@ -23453,7 +23131,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_not_contains",
+            "name": "emoji_not_contains",
             "description": "All values not containing the given string.",
             "type": {
               "kind": "SCALAR",
@@ -23465,7 +23143,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_not_ends_with",
+            "name": "emoji_not_ends_with",
             "description": "All values not ending with the given string",
             "type": {
               "kind": "SCALAR",
@@ -23477,7 +23155,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_not_in",
+            "name": "emoji_not_in",
             "description": "All values that are not contained in given list.",
             "type": {
               "kind": "LIST",
@@ -23493,7 +23171,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_not_starts_with",
+            "name": "emoji_not_starts_with",
             "description": "All values not starting with the given string.",
             "type": {
               "kind": "SCALAR",
@@ -23505,7 +23183,7 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt_starts_with",
+            "name": "emoji_starts_with",
             "description": "All values starting with the given string.",
             "type": {
               "kind": "SCALAR",

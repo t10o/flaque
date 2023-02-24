@@ -36,7 +36,6 @@ export type Aggregate = {
 export type Asset = Node & {
   __typename?: 'Asset';
   authorAvatar: Array<Author>;
-  coverImagePost: Array<Post>;
   /** The time the document was created */
   createdAt: Scalars['DateTime'];
   /** User that created this document */
@@ -91,20 +90,6 @@ export type AssetAuthorAvatarArgs = {
   orderBy?: InputMaybe<AuthorOrderByInput>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<AuthorWhereInput>;
-};
-
-
-/** Asset system model */
-export type AssetCoverImagePostArgs = {
-  after?: InputMaybe<Scalars['String']>;
-  before?: InputMaybe<Scalars['String']>;
-  first?: InputMaybe<Scalars['Int']>;
-  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
-  last?: InputMaybe<Scalars['Int']>;
-  locales?: InputMaybe<Array<Locale>>;
-  orderBy?: InputMaybe<PostOrderByInput>;
-  skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<PostWhereInput>;
 };
 
 
@@ -221,7 +206,6 @@ export type AssetConnection = {
 
 export type AssetCreateInput = {
   authorAvatar?: InputMaybe<AuthorCreateManyInlineInput>;
-  coverImagePost?: InputMaybe<PostCreateManyInlineInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   fileName: Scalars['String'];
   handle: Scalars['String'];
@@ -293,9 +277,6 @@ export type AssetManyWhereInput = {
   authorAvatar_every?: InputMaybe<AuthorWhereInput>;
   authorAvatar_none?: InputMaybe<AuthorWhereInput>;
   authorAvatar_some?: InputMaybe<AuthorWhereInput>;
-  coverImagePost_every?: InputMaybe<PostWhereInput>;
-  coverImagePost_none?: InputMaybe<PostWhereInput>;
-  coverImagePost_some?: InputMaybe<PostWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -407,7 +388,6 @@ export type AssetTransformationInput = {
 
 export type AssetUpdateInput = {
   authorAvatar?: InputMaybe<AuthorUpdateManyInlineInput>;
-  coverImagePost?: InputMaybe<PostUpdateManyInlineInput>;
   fileName?: InputMaybe<Scalars['String']>;
   handle?: InputMaybe<Scalars['String']>;
   height?: InputMaybe<Scalars['Float']>;
@@ -556,9 +536,6 @@ export type AssetWhereInput = {
   authorAvatar_every?: InputMaybe<AuthorWhereInput>;
   authorAvatar_none?: InputMaybe<AuthorWhereInput>;
   authorAvatar_some?: InputMaybe<AuthorWhereInput>;
-  coverImagePost_every?: InputMaybe<PostWhereInput>;
-  coverImagePost_none?: InputMaybe<PostWhereInput>;
-  coverImagePost_some?: InputMaybe<PostWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -2921,8 +2898,6 @@ export type Post = Node & {
   author?: Maybe<Author>;
   /** Write your blog post! */
   content: RichText;
-  /** Upload or select a cover image to set as your Featured Image */
-  coverImage?: Maybe<Asset>;
   /** The time the document was created */
   createdAt: Scalars['DateTime'];
   /** User that created this document */
@@ -2931,8 +2906,8 @@ export type Post = Node & {
   date: Scalars['Date'];
   /** Get the document in other stages */
   documentInStages: Array<Post>;
-  /** Add a short excerpt to summarize this post */
-  excerpt?: Maybe<Scalars['String']>;
+  /** Emoji */
+  emoji: Scalars['String'];
   /** List of Post versions */
   history: Array<Version>;
   /** The unique identifier */
@@ -2960,12 +2935,6 @@ export type Post = Node & {
 
 
 export type PostAuthorArgs = {
-  forceParentLocale?: InputMaybe<Scalars['Boolean']>;
-  locales?: InputMaybe<Array<Locale>>;
-};
-
-
-export type PostCoverImageArgs = {
   forceParentLocale?: InputMaybe<Scalars['Boolean']>;
   locales?: InputMaybe<Array<Locale>>;
 };
@@ -3040,10 +3009,9 @@ export type PostConnection = {
 export type PostCreateInput = {
   author?: InputMaybe<AuthorCreateOneInlineInput>;
   content: Scalars['RichTextAST'];
-  coverImage?: InputMaybe<AssetCreateOneInlineInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   date: Scalars['Date'];
-  excerpt?: InputMaybe<Scalars['String']>;
+  emoji: Scalars['String'];
   seo?: InputMaybe<SeoCreateOneInlineInput>;
   slug: Scalars['String'];
   tags?: InputMaybe<Array<Scalars['String']>>;
@@ -3085,7 +3053,6 @@ export type PostManyWhereInput = {
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
   author?: InputMaybe<AuthorWhereInput>;
-  coverImage?: InputMaybe<AssetWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -3120,25 +3087,25 @@ export type PostManyWhereInput = {
   documentInStages_every?: InputMaybe<PostWhereStageInput>;
   documentInStages_none?: InputMaybe<PostWhereStageInput>;
   documentInStages_some?: InputMaybe<PostWhereStageInput>;
-  excerpt?: InputMaybe<Scalars['String']>;
+  emoji?: InputMaybe<Scalars['String']>;
   /** All values containing the given string. */
-  excerpt_contains?: InputMaybe<Scalars['String']>;
+  emoji_contains?: InputMaybe<Scalars['String']>;
   /** All values ending with the given string. */
-  excerpt_ends_with?: InputMaybe<Scalars['String']>;
+  emoji_ends_with?: InputMaybe<Scalars['String']>;
   /** All values that are contained in given list. */
-  excerpt_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  emoji_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** All values that are not equal to given value. */
-  excerpt_not?: InputMaybe<Scalars['String']>;
+  emoji_not?: InputMaybe<Scalars['String']>;
   /** All values not containing the given string. */
-  excerpt_not_contains?: InputMaybe<Scalars['String']>;
+  emoji_not_contains?: InputMaybe<Scalars['String']>;
   /** All values not ending with the given string */
-  excerpt_not_ends_with?: InputMaybe<Scalars['String']>;
+  emoji_not_ends_with?: InputMaybe<Scalars['String']>;
   /** All values that are not contained in given list. */
-  excerpt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  emoji_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** All values not starting with the given string. */
-  excerpt_not_starts_with?: InputMaybe<Scalars['String']>;
+  emoji_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
-  excerpt_starts_with?: InputMaybe<Scalars['String']>;
+  emoji_starts_with?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -3249,8 +3216,8 @@ export enum PostOrderByInput {
   CreatedAtDesc = 'createdAt_DESC',
   DateAsc = 'date_ASC',
   DateDesc = 'date_DESC',
-  ExcerptAsc = 'excerpt_ASC',
-  ExcerptDesc = 'excerpt_DESC',
+  EmojiAsc = 'emoji_ASC',
+  EmojiDesc = 'emoji_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
@@ -3268,9 +3235,8 @@ export enum PostOrderByInput {
 export type PostUpdateInput = {
   author?: InputMaybe<AuthorUpdateOneInlineInput>;
   content?: InputMaybe<Scalars['RichTextAST']>;
-  coverImage?: InputMaybe<AssetUpdateOneInlineInput>;
   date?: InputMaybe<Scalars['Date']>;
-  excerpt?: InputMaybe<Scalars['String']>;
+  emoji?: InputMaybe<Scalars['String']>;
   seo?: InputMaybe<SeoUpdateOneInlineInput>;
   slug?: InputMaybe<Scalars['String']>;
   tags?: InputMaybe<Array<Scalars['String']>>;
@@ -3297,7 +3263,7 @@ export type PostUpdateManyInlineInput = {
 export type PostUpdateManyInput = {
   content?: InputMaybe<Scalars['RichTextAST']>;
   date?: InputMaybe<Scalars['Date']>;
-  excerpt?: InputMaybe<Scalars['String']>;
+  emoji?: InputMaybe<Scalars['String']>;
   tags?: InputMaybe<Array<Scalars['String']>>;
   title?: InputMaybe<Scalars['String']>;
 };
@@ -3362,7 +3328,6 @@ export type PostWhereInput = {
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
   author?: InputMaybe<AuthorWhereInput>;
-  coverImage?: InputMaybe<AssetWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -3397,25 +3362,25 @@ export type PostWhereInput = {
   documentInStages_every?: InputMaybe<PostWhereStageInput>;
   documentInStages_none?: InputMaybe<PostWhereStageInput>;
   documentInStages_some?: InputMaybe<PostWhereStageInput>;
-  excerpt?: InputMaybe<Scalars['String']>;
+  emoji?: InputMaybe<Scalars['String']>;
   /** All values containing the given string. */
-  excerpt_contains?: InputMaybe<Scalars['String']>;
+  emoji_contains?: InputMaybe<Scalars['String']>;
   /** All values ending with the given string. */
-  excerpt_ends_with?: InputMaybe<Scalars['String']>;
+  emoji_ends_with?: InputMaybe<Scalars['String']>;
   /** All values that are contained in given list. */
-  excerpt_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  emoji_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** All values that are not equal to given value. */
-  excerpt_not?: InputMaybe<Scalars['String']>;
+  emoji_not?: InputMaybe<Scalars['String']>;
   /** All values not containing the given string. */
-  excerpt_not_contains?: InputMaybe<Scalars['String']>;
+  emoji_not_contains?: InputMaybe<Scalars['String']>;
   /** All values not ending with the given string */
-  excerpt_not_ends_with?: InputMaybe<Scalars['String']>;
+  emoji_not_ends_with?: InputMaybe<Scalars['String']>;
   /** All values that are not contained in given list. */
-  excerpt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  emoji_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** All values not starting with the given string. */
-  excerpt_not_starts_with?: InputMaybe<Scalars['String']>;
+  emoji_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
-  excerpt_starts_with?: InputMaybe<Scalars['String']>;
+  emoji_starts_with?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -6085,7 +6050,7 @@ export enum _SystemDateTimeFieldVariation {
 export type PostsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', title: string, slug: string, tags: Array<string>, date: any, content: { __typename?: 'RichText', html: string, markdown: string, raw: any, text: string } }> };
+export type PostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, title: string, slug: string, emoji: string, tags: Array<string>, date: any }> };
 
 
-export const PostsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Posts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"posts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"tags"}},{"kind":"Field","name":{"kind":"Name","value":"date"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"html"}},{"kind":"Field","name":{"kind":"Name","value":"markdown"}},{"kind":"Field","name":{"kind":"Name","value":"raw"}},{"kind":"Field","name":{"kind":"Name","value":"text"}}]}}]}}]}}]} as unknown as DocumentNode<PostsQuery, PostsQueryVariables>;
+export const PostsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Posts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"posts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"emoji"}},{"kind":"Field","name":{"kind":"Name","value":"tags"}},{"kind":"Field","name":{"kind":"Name","value":"date"}}]}}]}}]} as unknown as DocumentNode<PostsQuery, PostsQueryVariables>;
