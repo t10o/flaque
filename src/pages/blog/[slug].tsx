@@ -30,11 +30,9 @@ export default function BlogArticle() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  console.log(data);
-
   return (
     <>
-      <BlogContent />
+      <BlogContent blog={data!} />
     </>
   );
 }
