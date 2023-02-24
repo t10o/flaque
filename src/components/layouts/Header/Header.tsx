@@ -6,7 +6,7 @@ import { MENUS } from "@/constants/menus";
 export const Header = (): JSX.Element => {
   const headerMenu = () => {
     return MENUS.filter((menu) => {
-      return menu.name !== "privacy";
+      return menu.name !== "Privacy";
     });
   };
 
@@ -18,7 +18,7 @@ export const Header = (): JSX.Element => {
         "justify-between",
         "h-14",
         "px-4",
-        "mt-4"
+        "mt-10"
       )}
     >
       <Link href="/">

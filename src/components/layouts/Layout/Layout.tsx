@@ -1,7 +1,6 @@
-import clsx from "clsx";
 import { ReactNode } from "react";
 
-import { Footer, Header } from "@/components/layouts";
+import { Footer, Header, Main } from "@/components/layouts";
 
 interface Props {
   children: ReactNode;
@@ -12,7 +11,7 @@ export const Layout = ({ children }: Props): JSX.Element => {
     <>
       <Header />
 
-      <main className={clsx("box-border")}>{children}</main>
+      <Main>{children}</Main>
 
       <Footer />
     </>

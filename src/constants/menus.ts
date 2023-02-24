@@ -1,18 +1,18 @@
 export const MENUS = [
   {
-    name: "blog",
+    name: "Blog",
     href: "/blog",
   },
   {
-    name: "about",
+    name: "About",
     href: "/about",
   },
   {
-    name: "contact",
+    name: "Contact",
     href: "/contact",
   },
   {
-    name: "privacy",
+    name: "Privacy",
     href: "/privacy",
   },
 ];
