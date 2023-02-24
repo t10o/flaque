@@ -1,8 +1,11 @@
 import "@/styles/globals.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import type { AppProps } from "next/app";
 import { Noto_Sans_Javanese } from "next/font/google";
+
+import { Layout } from "@/components/layouts";
 
 const notoSansJapanese = Noto_Sans_Javanese({ subsets: ["latin"] });
 
@@ -20,7 +23,9 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
 
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ApolloProvider>
   );
 }
