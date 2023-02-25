@@ -22,7 +22,7 @@ export const Header = (): JSX.Element => {
       )}
     >
       <Link href="/">
-        <h1 className={clsx("text-4xl")}>flaque</h1>
+        <span className={clsx("text-4xl")}>flaque</span>
       </Link>
 
       <div className={clsx("lg:flex", "items-center", "hidden", "text-center")}>
