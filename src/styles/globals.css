@@ -12,6 +12,12 @@ html {
   background-color: #F9FCFF;
 }
 
+h1 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
 body {
   margin: 0;
 }
