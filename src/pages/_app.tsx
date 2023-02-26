@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from "next/app";
 import { Noto_Sans_Javanese } from "next/font/google";
 import { RecoilRoot } from "recoil";
@@ -17,18 +18,22 @@ export default function App({ Component, pageProps }: AppProps) {
   });
 
   return (
-    <ApolloProvider client={client}>
-      <style jsx global>{`
-        html {
-          font-family: ${notoSansJapanese.style.fontFamily};
-        }
-      `}</style>
+    <>
+      <ApolloProvider client={client}>
+        <style jsx global>{`
+          html {
+            font-family: ${notoSansJapanese.style.fontFamily};
+          }
+        `}</style>
 
-      <RecoilRoot>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </RecoilRoot>
-    </ApolloProvider>
+        <RecoilRoot>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </RecoilRoot>
+      </ApolloProvider>
+
+      <Analytics />
+    </>
   );
 }
