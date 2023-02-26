@@ -1,30 +1,24 @@
 import clsx from "clsx";
+import React from "react";
 
-interface Props {
+type Props = React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+interface ButtonProps extends Props {
   label: string;
-  onClick: () => void;
 }
 
-export const Button = ({ label, onClick }: Props) => {
-  return (
-    <button
-      className={clsx(
-        "w-full",
-        "rounded-lg",
-        "px-4",
-        "py-2",
-        "text-center",
-        "text-white",
-        "text-lg",
-        "bg-gradient-to-r",
-        "from-purple-500",
-        "to-pink-500"
-      )}
-      onClick={onClick}
-    >
-      {label}
-    </button>
-  );
-};
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className = "", ...props }, ref) => {
+    return (
+      <button
+        ref={ref}
+        className={clsx("py-2", "px-4", "rounded-lg", "text-center", className)}
+        {...props}
+      >
+        {props.label}
+      </button>
+    );
+  }
+);
 
-Button.displayName = "Button";
+Button.displayName = "Input";
