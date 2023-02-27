@@ -1,6 +1,7 @@
 import clsx from "clsx";
 
 import { Button, Input } from "@/components/elements";
+import { Textarea } from "@/components/elements/Textarea";
 
 export default function Contact() {
   return (
@@ -14,6 +15,18 @@ export default function Contact() {
       <div>Email</div>
       <Input
         className={clsx("w-full", "mb-12", "shadow-down", "focus:outline-0")}
+      />
+
+      <div>Message</div>
+      <Textarea
+        className={clsx(
+          "w-full",
+          "mb-12",
+          "shadow-down",
+          "focus:outline-0",
+          "border-0",
+          "h-80"
+        )}
       />
 
       <Button
