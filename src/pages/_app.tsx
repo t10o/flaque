@@ -17,6 +17,9 @@ const notoSansJapanese = Noto_Sans_Javanese({ subsets: ["latin"] });
 export default function App({ Component, pageProps }: AppProps) {
   const client = new ApolloClient({
     cache: new InMemoryCache(),
+    headers: {
+      authorization: ` Bearer ${process.env.NEXT_PUBLIC_HYGRAPH_PERMANENTAUTH_TOKEN}`,
+    },
     uri: process.env.NEXT_PUBLIC_ENDPOINT,
   });
 
