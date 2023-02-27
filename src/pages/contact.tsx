@@ -42,6 +42,7 @@ export default function Contact() {
     formState: { errors },
     handleSubmit,
     register,
+    reset,
   } = useForm<Message>({
     resolver: zodResolver(schema),
   });
@@ -55,6 +56,7 @@ export default function Contact() {
   const [createMessage] = useMutation(createQuery, {
     onCompleted() {
       toast.success("メッセージを送信しました。");
+      reset();
     },
     onError: (error) => {
       error.graphQLErrors.map((error) => toast.error(error.message));
