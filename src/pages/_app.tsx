@@ -5,6 +5,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { Analytics } from '@vercel/analytics/react';
 import type { AppProps } from "next/app";
 import { Noto_Sans_Javanese } from "next/font/google";
+import Head from "next/head";
 import { RecoilRoot } from "recoil";
 
 import { Layout } from "@/components/layouts";
@@ -19,6 +20,10 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
+      <Head>
+        <title>Flaque</title>
+      </Head>
+      
       <ApolloProvider client={client}>
         <style jsx global>{`
           html {
