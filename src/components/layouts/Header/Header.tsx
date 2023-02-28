@@ -1,14 +1,16 @@
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
 import Link from "next/link";
 
-import { MENUS } from "@/constants/menus";
+import { useMenu } from "@/hooks/use-menu";
 
-export const Header = (): JSX.Element => {
-  const headerMenu = () => {
-    return MENUS.filter((menu) => {
-      return menu.name !== "Privacy";
-    });
-  };
+interface Props {
+  onClick: () => void;
+}
+
+export const Header = ({ onClick }: Props): JSX.Element => {
+  const { headerMenu } = useMenu();
 
   return (
     <header
@@ -25,8 +27,12 @@ export const Header = (): JSX.Element => {
         <span className={clsx("text-4xl")}>flaque</span>
       </Link>
 
+      <button className={clsx("lg:hidden")} onClick={onClick}>
+        <FontAwesomeIcon className={clsx("text-lg")} icon={faBars} />
+      </button>
+
       <div className={clsx("lg:flex", "items-center", "hidden", "text-center")}>
-        {headerMenu().map((menu) => {
+        {headerMenu.map((menu) => {
           return (
             <Link
               className={clsx("mx-4", "text-xl")}

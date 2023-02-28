@@ -1,7 +1,9 @@
+import clsx from "clsx";
 import { useRouter } from "next/router";
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 
+import { Menu } from "@/components/elements/Menu/Menu";
 import { Footer, Header, Main } from "@/components/layouts";
 import { MENUS } from "@/constants/menus";
 import { LayoutState } from "@/stores/layout";
@@ -32,9 +34,35 @@ export const Layout = ({ children }: Props): JSX.Element => {
     setLayoutState({ name: currentPageTitle });
   };
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onMenuClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const onMenuOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const onMenuClose = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-      <Header />
+      <Menu
+        className={clsx("top-0", "bg-main")}
+        right
+        isOpen={isOpen}
+        burgerButtonClassName={clsx("hidden")}
+        overlayClassName={clsx("top-0")}
+        itemListClassName={clsx("m-4")}
+        onClick={onMenuClick}
+        onOpen={onMenuOpen}
+        onClose={onMenuClose}
+      />
+
+      <Header onClick={onMenuClick} />
 
       <Main>{children}</Main>
 
