@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { ReactNode } from "react";
 
-import { useLayout } from "@/hooks/use-layout";
+import { useLayout } from "@/hooks";
 
 interface Props {
   children: ReactNode;
