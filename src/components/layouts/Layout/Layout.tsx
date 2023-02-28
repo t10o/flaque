@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { ReactNode, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 
-import { Menu } from "@/components/elements/Menu/Menu";
+import { Menu } from "@/components/elements";
 import { Footer, Header, Main } from "@/components/layouts";
 import { MENUS } from "@/constants/menus";
 import { LayoutState } from "@/stores/layout";

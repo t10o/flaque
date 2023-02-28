@@ -1,9 +1,9 @@
 import { gql, useQuery } from "@apollo/client";
 
-import { BlogCard, BlogList } from "@/features/blog";
+import { Blog } from "@/features/blog";
 import { PostsQuery } from "@/gql/graphql";
 
-export default function Home() {
+export const Home = () => {
   const QUERY = gql`
     query Posts {
       posts {
@@ -21,25 +21,13 @@ export default function Home() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
+  if (!data) return <p>Empty :(</p>;
 
   return (
     <>
-      <BlogList>
-        {data!.posts.map(({ id, title, date, emoji, slug, tags }) => {
-          return (
-            <>
-              <BlogCard
-                key={id}
-                title={title}
-                slug={slug}
-                date={date}
-                emoji={emoji}
-                tags={tags}
-              />
-            </>
-          );
-        })}
-      </BlogList>
+      <Blog blogList={data} />
     </>
   );
-}
+};
+
+export default Home;

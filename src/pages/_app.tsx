@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Flaque</title>
+        <title>flaque</title>
       </Head>
 
       <ToastContainer

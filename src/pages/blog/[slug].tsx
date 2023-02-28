@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { BlogContent } from "@/features/blog";
 import { PostQuery } from "@/gql/graphql";
 
-export default function BlogArticle() {
+export const BlogContentPage = () => {
   const QUERY = gql`
     query Post($slug: String) {
       post(where: { slug: $slug }) {
@@ -29,10 +29,13 @@ export default function BlogArticle() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
+  if (!data) return <p>Empty :(</p>;
 
   return (
     <>
-      <BlogContent blog={data!} />
+      <BlogContent blog={data} />
     </>
   );
-}
+};
+
+export default BlogContentPage;

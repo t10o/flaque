@@ -1,9 +1,10 @@
 import { gql, useQuery } from "@apollo/client";
+import { NextPage } from "next";
 
-import { BlogCard, BlogList } from "@/features/blog";
+import { Blog } from "@/features/blog";
 import { PostsQuery } from "@/gql/graphql";
 
-export default function Blog() {
+export const BlogPage: NextPage = () => {
   const QUERY = gql`
     query Posts {
       posts {
@@ -21,25 +22,9 @@ export default function Blog() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
+  if (!data) return <p>Empty :(</p>;
 
-  return (
-    <>
-      <BlogList>
-        {data!.posts.map(({ id, title, date, emoji, slug, tags }) => {
-          return (
-            <>
-              <BlogCard
-                key={id}
-                title={title}
-                slug={slug}
-                date={date}
-                emoji={emoji}
-                tags={tags}
-              />
-            </>
-          );
-        })}
-      </BlogList>
-    </>
-  );
-}
+  return <Blog blogList={data} />;
+};
+
+export default BlogPage;

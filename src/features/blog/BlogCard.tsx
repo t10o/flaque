@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import NextImage from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import twemoji from "twemoji";
 
@@ -39,7 +39,7 @@ export const BlogCard = ({
           "items-center"
         )}
       >
-        <NextImage src={url} alt={emoji} fill />
+        <Image src={url} alt={emoji} fill />
       </div>
 
       <div
