@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "react-toastify/dist/ReactToastify.css";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { Analytics } from "@vercel/analytics/react";
