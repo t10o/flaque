@@ -9,6 +9,7 @@ import type { AppProps } from "next/app";
 import { Noto_Sans_Javanese } from "next/font/google";
 import Head from "next/head";
 import Script from "next/script";
+import { DefaultSeo } from "next-seo";
 import { ToastContainer } from "react-toastify";
 
 import { Layout } from "@/components/layouts";
@@ -45,6 +46,18 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>flaque</title>
       </Head>
+
+      <DefaultSeo
+        defaultTitle="flaque"
+        description="flaqueのトップページ"
+        openGraph={{
+          title: "flaque",
+          description: "flaqueのトップページ",
+          site_name: "flaque",
+          type: "website",
+          url: "https://flaque.t10o.one",
+        }}
+      />
 
       <ToastContainer
         position="top-right"

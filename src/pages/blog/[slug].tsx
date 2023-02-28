@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import { NextSeo } from "next-seo";
 
 import { BlogContent, BlogContentSkeleton } from "@/features/blog";
 import { PostQuery } from "@/gql/graphql";
@@ -10,6 +11,8 @@ export const BlogContentPage = () => {
       post(where: { slug: $slug }) {
         id
         title
+        slug
+        description
         tags
         date
         emoji
@@ -29,8 +32,32 @@ export const BlogContentPage = () => {
 
   if (error) return <p>Error :(</p>;
 
+  const meta = {
+    title: "Content | flaque",
+    description: "flaqueのブログ",
+    slag: "",
+  };
+
+  if (data && data.post) {
+    meta.title = `${data.post.title} | flaque`;
+    meta.description = data.post.description;
+    meta.slag = data.post.slug;
+  }
+
   return (
-    <>{loading ? <BlogContentSkeleton /> : <BlogContent blog={data!} />}</>
+    <>
+      <NextSeo
+        title={meta.title}
+        description={meta.description}
+        openGraph={{
+          title: meta.title,
+          description: meta.description,
+          url: `https://flaque.t10o.one/blog/${meta.slag}}`,
+        }}
+      />
+
+      {loading ? <BlogContentSkeleton /> : <BlogContent blog={data!} />}
+    </>
   );
 };
 
