@@ -1,14 +1,13 @@
-import { useMutation } from "@apollo/client";
+import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
 import clsx from "clsx";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import * as z from "zod";
 
 import { Button, Input } from "@/components/elements";
 import { Textarea } from "@/components/elements/Textarea";
-import { graphql } from "@/gql";
 
 interface Message {
   name: string;
@@ -17,15 +16,7 @@ interface Message {
 }
 
 export default function Contact() {
-  const createQuery = graphql(`
-    mutation CreateMessage($name: String!, $email: String!, $message: String!) {
-      createMessage(data: { name: $name, email: $email, message: $message }) {
-        name
-        email
-        message
-      }
-    }
-  `);
+  const form = useRef(null);
 
   const schema = z.object({
     name: z.string().min(1, { message: "Name：1文字以上入力してください。" }),
@@ -53,29 +44,34 @@ export default function Contact() {
     errors.message && toast.error(errors.message.message as string);
   }, [errors]);
 
-  const [createMessage] = useMutation(createQuery, {
-    onCompleted() {
-      toast.success("メッセージを送信しました。");
-      reset();
-    },
-    onError: (error) => {
-      error.graphQLErrors.map((error) => toast.error(error.message));
-    },
-  });
+  const onSubmit = () => {
+    if (!form || !form.current) {
+      toast.error("フォームが取得できません。");
 
-  const onSubmit = (data: Message) => {
-    createMessage({
-      variables: {
-        name: data.name,
-        email: data.email,
-        message: data.message,
-      },
-    });
+      return;
+    }
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+        form.current,
+        process.env.NEXT_PUBLIC_MAILER_PUBLIC_KEY!
+      )
+      .then(
+        () => {
+          toast.success("メッセージを送信しました。");
+          reset();
+        },
+        (error) => {
+          toast.error(error.text);
+        }
+      );
   };
 
   return (
     <div className={clsx("px-4", "max-w-7xl", "mx-auto")}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form ref={form} onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="name">Name</label>
         <Input
           id="name"
