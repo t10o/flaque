@@ -1,37 +1,16 @@
-import { gql, useQuery } from "@apollo/client";
-import { useRouter } from "next/router";
+import { gql } from "@apollo/client";
+import { GetServerSideProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 
-import { BlogContent, BlogContentSkeleton } from "@/features/blog";
+import { BlogContent } from "@/features/blog";
 import { PostQuery } from "@/gql/graphql";
+import { initializeApollo } from "@/lib/apolloClient";
 
-export const BlogContentPage = () => {
-  const QUERY = gql`
-    query Post($slug: String) {
-      post(where: { slug: $slug }) {
-        id
-        title
-        slug
-        description
-        tags
-        date
-        emoji
-        content {
-          markdown
-        }
-      }
-    }
-  `;
+interface Props {
+  data: PostQuery;
+}
 
-  const router = useRouter();
-  const slug = router.query.slug as string;
-
-  const { data, error, loading } = useQuery<PostQuery>(QUERY, {
-    variables: { slug },
-  });
-
-  if (error) return <p>Error :(</p>;
-
+export const BlogContentPage: NextPage<Props> = ({ data }) => {
   const meta = {
     title: "Content | flaque",
     description: "flaqueのブログ",
@@ -56,9 +35,41 @@ export const BlogContentPage = () => {
         }}
       />
 
-      {loading ? <BlogContentSkeleton /> : <BlogContent blog={data!} />}
+      <BlogContent blog={data} />
     </>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  const QUERY = gql`
+    query Post($slug: String) {
+      post(where: { slug: $slug }) {
+        id
+        title
+        slug
+        description
+        tags
+        date
+        emoji
+        content {
+          markdown
+        }
+      }
+    }
+  `;
+
+  const slug = query.slug;
+
+  const client = initializeApollo();
+
+  const { data } = await client.query<PostQuery>({
+    query: QUERY,
+    variables: { slug },
+  });
+
+  return {
+    props: { data },
+  };
 };
 
 export default BlogContentPage;

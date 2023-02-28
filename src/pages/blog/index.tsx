@@ -1,11 +1,34 @@
-import { gql, useQuery } from "@apollo/client";
-import { NextPage } from "next";
+import { gql } from "@apollo/client";
+import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 
 import { Blog } from "@/features/blog";
 import { PostsQuery } from "@/gql/graphql";
+import { initializeApollo } from "@/lib/apolloClient";
 
-export const BlogPage: NextPage = () => {
+interface Props {
+  data: PostsQuery;
+}
+
+export const BlogPage: NextPage<Props> = (props) => {
+  return (
+    <>
+      <NextSeo
+        title="Blog | flaque"
+        description="flaqueのブログ一覧ページ"
+        openGraph={{
+          title: "Blog | flaque",
+          description: "flaqueのブログ一覧ページ",
+          url: "https://flaque.t10o.one/blog",
+        }}
+      />
+
+      <Blog blogList={props.data} />
+    </>
+  );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
   const QUERY = gql`
     query Posts {
       posts {
@@ -19,25 +42,18 @@ export const BlogPage: NextPage = () => {
     }
   `;
 
-  const { data, error, loading } = useQuery<PostsQuery>(QUERY);
+  const client = initializeApollo();
 
-  if (error) return <p>Error :(</p>;
+  const { data } = await client.query<PostsQuery>({
+    query: QUERY,
+  });
 
-  return (
-    <>
-      <NextSeo
-        title="Blog | flaque"
-        description="flaqueのブログ一覧ページ"
-        openGraph={{
-          title: "Blog | flaque",
-          description: "flaqueのブログ一覧ページ",
-          url: "https://flaque.t10o.one/blog",
-        }}
-      />
-
-      <Blog blogList={data!} isLoading={loading} />
-    </>
-  );
+  return {
+    props: {
+      data,
+    },
+    revalidate: 60,
+  };
 };
 
 export default BlogPage;

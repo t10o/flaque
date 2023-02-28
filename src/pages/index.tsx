@@ -1,9 +1,19 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
+import { GetStaticProps, NextPage } from "next";
 
 import { Blog } from "@/features/blog";
 import { PostsQuery } from "@/gql/graphql";
+import { initializeApollo } from "@/lib/apolloClient";
 
-export const Home = () => {
+interface Props {
+  data: PostsQuery;
+}
+
+export const Home: NextPage<Props> = (props) => {
+  return <Blog blogList={props.data} />;
+};
+
+export const getStaticProps: GetStaticProps = async () => {
   const QUERY = gql`
     query Posts {
       posts {
@@ -17,11 +27,18 @@ export const Home = () => {
     }
   `;
 
-  const { data, error, loading } = useQuery<PostsQuery>(QUERY);
+  const client = initializeApollo();
 
-  if (error) return <p>Error :(</p>;
+  const { data } = await client.query<PostsQuery>({
+    query: QUERY,
+  });
 
-  return <Blog blogList={data!} isLoading={loading} />;
+  return {
+    props: {
+      data,
+    },
+    revalidate: 60,
+  };
 };
 
 export default Home;

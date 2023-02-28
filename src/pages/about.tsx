@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 
 import { About } from "@/features/about";
@@ -19,6 +19,13 @@ export const AboutPage: NextPage = () => {
       <About />
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {},
+    revalidate: 60,
+  };
 };
 
 export default AboutPage;

@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 
 import { Contact } from "@/features/contact";
@@ -19,6 +19,13 @@ export const ContactPage: NextPage = () => {
       <Contact />
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = () => {
+  return {
+    props: {},
+    revalidate: 60,
+  };
 };
 
 export default ContactPage;
