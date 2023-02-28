@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import clsx from "clsx";
 import Link from "next/link";
 
+import { Button } from "@/components/elements";
 import { useMenu } from "@/hooks/use-menu";
 
 interface Props {
@@ -27,9 +28,9 @@ export const Header = ({ onClick }: Props): JSX.Element => {
         <span className={clsx("text-4xl")}>flaque</span>
       </Link>
 
-      <button className={clsx("lg:hidden")} aria-label="Menu" onClick={onClick}>
+      <Button className={clsx("lg:hidden")} onClick={onClick}>
         <FontAwesomeIcon className={clsx("text-lg")} icon={faBars} />
-      </button>
+      </Button>
 
       <div className={clsx("lg:flex", "items-center", "hidden", "text-center")}>
         {headerMenu.map((menu) => {

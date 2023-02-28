@@ -1,10 +1,11 @@
 import clsx from "clsx";
-import React from "react";
+import React, { ReactNode } from "react";
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 interface ButtonProps extends Props {
-  label: string;
+  children?: ReactNode;
+  label?: string;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -15,7 +16,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={clsx("py-2", "px-4", "rounded-lg", "text-center", className)}
         {...props}
       >
-        {props.label}
+        {props.label || props.children}
       </button>
     );
   }
