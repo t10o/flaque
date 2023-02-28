@@ -18,7 +18,7 @@ export const Main = ({ children }: Props): JSX.Element => {
         </div>
       )}
 
-      <div className={clsx(!currentPageTitle && "mt-20")}>{children}</div>
+      <div className={clsx("mt-20")}>{children}</div>
     </main>
   );
 };

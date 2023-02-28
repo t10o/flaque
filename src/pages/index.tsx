@@ -9,8 +9,8 @@ interface Props {
   data: PostsQuery;
 }
 
-export const Home: NextPage<Props> = (props) => {
-  return <Blog blogList={props.data} />;
+export const Home: NextPage<Props> = ({ data }) => {
+  return <Blog blogList={data} />;
 };
 
 export const getStaticProps: GetStaticProps = async () => {

@@ -10,7 +10,7 @@ interface Props {
   data: PostsQuery;
 }
 
-export const BlogPage: NextPage<Props> = (props) => {
+export const BlogPage: NextPage<Props> = ({ data }) => {
   return (
     <>
       <NextSeo
@@ -23,7 +23,7 @@ export const BlogPage: NextPage<Props> = (props) => {
         }}
       />
 
-      <Blog blogList={props.data} />
+      <Blog blogList={data} />
     </>
   );
 };
