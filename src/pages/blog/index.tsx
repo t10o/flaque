@@ -20,11 +20,9 @@ export const BlogPage: NextPage = () => {
 
   const { data, error, loading } = useQuery<PostsQuery>(QUERY);
 
-  if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
-  if (!data) return <p>Empty :(</p>;
 
-  return <Blog blogList={data} />;
+  return <Blog blogList={data!} isLoading={loading} />;
 };
 
 export default BlogPage;

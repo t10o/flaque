@@ -1,7 +1,7 @@
 import { gql, useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 
-import { BlogContent } from "@/features/blog";
+import { BlogContent, BlogContentSkeleton } from "@/features/blog";
 import { PostQuery } from "@/gql/graphql";
 
 export const BlogContentPage = () => {
@@ -27,14 +27,10 @@ export const BlogContentPage = () => {
     variables: { slug },
   });
 
-  if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
-  if (!data) return <p>Empty :(</p>;
 
   return (
-    <>
-      <BlogContent blog={data} />
-    </>
+    <>{loading ? <BlogContentSkeleton /> : <BlogContent blog={data!} />}</>
   );
 };
 
