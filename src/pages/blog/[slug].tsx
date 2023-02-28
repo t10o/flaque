@@ -21,7 +21,7 @@ export const BlogContentPage = () => {
   `;
 
   const router = useRouter();
-  const slug = router.query.slug;
+  const slug = router.query.slug as string;
 
   const { data, error, loading } = useQuery<PostQuery>(QUERY, {
     variables: { slug },
