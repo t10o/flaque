@@ -27,7 +27,7 @@ export const Header = ({ onClick }: Props): JSX.Element => {
         <span className={clsx("text-4xl")}>flaque</span>
       </Link>
 
-      <button className={clsx("lg:hidden")} onClick={onClick}>
+      <button className={clsx("lg:hidden")} aria-label="Menu" onClick={onClick}>
         <FontAwesomeIcon className={clsx("text-lg")} icon={faBars} />
       </button>
 
