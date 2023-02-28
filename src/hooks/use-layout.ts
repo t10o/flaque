@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 import { MENUS } from "@/constants/menus";
+import * as gtag from "@/lib/gtag";
 
 export const useLayout = () => {
   const [currentPageTitle, setCurrentPageTitle] = useState("");
@@ -20,7 +21,9 @@ export const useLayout = () => {
     };
   }, [router.events]);
 
-  const handleChangeRoute = (path: string) => {
+  const handleChangeRoute = (path: any) => {
+    gtag.pageview(path);
+
     const currentPage = MENUS.filter((menu) => {
       return menu.href === path;
     });
