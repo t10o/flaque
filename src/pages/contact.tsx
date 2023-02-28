@@ -9,12 +9,6 @@ import * as z from "zod";
 import { Button, Input } from "@/components/elements";
 import { Textarea } from "@/components/elements/Textarea";
 
-interface Message {
-  name: string;
-  email: string;
-  message: string;
-}
-
 export default function Contact() {
   const form = useRef(null);
 
@@ -34,7 +28,7 @@ export default function Contact() {
     handleSubmit,
     register,
     reset,
-  } = useForm<Message>({
+  } = useForm({
     resolver: zodResolver(schema),
   });
 
@@ -53,10 +47,10 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+        process.env.NEXT_PUBLIC_MAIL_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_MAIL_TEMPLATE_ID!,
         form.current,
-        process.env.NEXT_PUBLIC_MAILER_PUBLIC_KEY!
+        process.env.NEXT_PUBLIC_MAIL_PUBLIC_KEY!
       )
       .then(
         () => {
