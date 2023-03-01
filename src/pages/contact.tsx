@@ -27,7 +27,6 @@ export const ContactPage: NextPage = () => {
 export const getStaticProps: GetStaticProps = () => {
   return {
     props: {},
-    revalidate: 60,
   };
 };
 

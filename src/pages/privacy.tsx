@@ -27,7 +27,6 @@ export const PrivacyPage: NextPage = () => {
 export const getStaticProps: GetStaticProps = () => {
   return {
     props: {},
-    revalidate: 60,
   };
 };
 
