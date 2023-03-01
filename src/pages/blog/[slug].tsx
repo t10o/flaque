@@ -1,9 +1,9 @@
 import { gql } from "@apollo/client";
-import { GetServerSideProps, NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 
 import { BlogContent } from "@/features/blog";
-import { PostQuery } from "@/gql/graphql";
+import { ContentsQuery, PostQuery } from "@/gql/graphql";
 import { initializeApollo } from "@/lib/apolloClient";
 
 interface Props {
@@ -40,7 +40,31 @@ export const BlogContentPage: NextPage<Props> = ({ data }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+export const getStaticPaths = async () => {
+  const QUERY = gql`
+    query Contents {
+      posts {
+        slug
+      }
+    }
+  `;
+
+  const client = initializeApollo();
+
+  const { data } = await client.query<ContentsQuery>({
+    query: QUERY,
+  });
+
+  const paths = data.posts.map((post) => {
+    return `/blog/${post.slug}`;
+  });
+
+  return { fallback: false, paths };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const slug = params!.slug;
+
   const QUERY = gql`
     query Post($slug: String) {
       post(where: { slug: $slug }) {
@@ -58,8 +82,6 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     }
   `;
 
-  const slug = query.slug;
-
   const client = initializeApollo();
 
   const { data } = await client.query<PostQuery>({
@@ -69,6 +91,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 
   return {
     props: { data },
+    revalidate: 60,
   };
 };
 
