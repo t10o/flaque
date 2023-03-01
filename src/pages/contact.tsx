@@ -1,6 +1,7 @@
 import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 
+import { ContentLayout } from "@/components/layouts";
 import { Contact } from "@/features/contact";
 
 export const ContactPage: NextPage = () => {
@@ -16,7 +17,9 @@ export const ContactPage: NextPage = () => {
         }}
       />
 
-      <Contact />
+      <ContentLayout pageTitle="Contact">
+        <Contact />
+      </ContentLayout>
     </>
   );
 };

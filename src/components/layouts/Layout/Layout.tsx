@@ -1,8 +1,10 @@
 import clsx from "clsx";
-import { ReactNode, useState } from "react";
+import { useRouter } from "next/router";
+import { ReactNode, useEffect, useState } from "react";
 
 import { Menu } from "@/components/elements";
-import { Footer, Header, Main } from "@/components/layouts";
+import { Footer, Header } from "@/components/layouts";
+import * as gtag from "@/lib/gtag";
 
 interface Props {
   children: ReactNode;
@@ -10,6 +12,20 @@ interface Props {
 
 export const Layout = ({ children }: Props): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    router.events.on("routeChangeComplete", handleChangeRoute);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleChangeRoute);
+    };
+  }, [router.events]);
+
+  const handleChangeRoute = (path: any) => {
+    gtag.pageview(path);
+  };
 
   const onMenuClick = () => {
     setIsOpen(!isOpen);
@@ -39,7 +55,7 @@ export const Layout = ({ children }: Props): JSX.Element => {
 
       <Header onClick={onMenuClick} />
 
-      <Main>{children}</Main>
+      <main>{children}</main>
 
       <Footer />
     </>

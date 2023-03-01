@@ -2,6 +2,7 @@ import { gql } from "@apollo/client";
 import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
 
+import { ContentLayout } from "@/components/layouts";
 import { Blog } from "@/features/blog";
 import { PostsQuery } from "@/gql/graphql";
 import { initializeApollo } from "@/lib/apolloClient";
@@ -23,7 +24,9 @@ export const BlogPage: NextPage<Props> = ({ data }) => {
         }}
       />
 
-      <Blog blogList={data} />
+      <ContentLayout pageTitle="Blog">
+        <Blog blogList={data} />
+      </ContentLayout>
     </>
   );
 };

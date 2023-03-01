@@ -1,26 +1,23 @@
 import clsx from "clsx";
 import { ReactNode } from "react";
 
-import { useLayout } from "@/hooks";
-
 interface Props {
   children: ReactNode;
+  pageTitle?: string;
 }
 
-export const Main = ({ children }: Props): JSX.Element => {
-  const currentPageTitle = useLayout();
-
+export const ContentLayout = ({ children, pageTitle }: Props): JSX.Element => {
   return (
-    <main>
-      {currentPageTitle && (
+    <>
+      {pageTitle && (
         <div className={clsx("my-20", "text-3xl", "text-center")}>
-          {currentPageTitle}
+          {pageTitle}
         </div>
       )}
 
       <div className={clsx("mt-20")}>{children}</div>
-    </main>
+    </>
   );
 };
 
-Main.displayName = "Main";
+ContentLayout.displayName = "Main";

@@ -1,6 +1,7 @@
 import { gql } from "@apollo/client";
 import { GetStaticProps, NextPage } from "next";
 
+import { ContentLayout } from "@/components/layouts";
 import { Blog } from "@/features/blog";
 import { PostsQuery } from "@/gql/graphql";
 import { initializeApollo } from "@/lib/apolloClient";
@@ -10,7 +11,11 @@ interface Props {
 }
 
 export const Home: NextPage<Props> = ({ data }) => {
-  return <Blog blogList={data} />;
+  return (
+    <ContentLayout>
+      <Blog blogList={data} />
+    </ContentLayout>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
