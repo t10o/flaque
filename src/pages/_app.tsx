@@ -1,7 +1,6 @@
 import "@/styles/globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "react-toastify/dist/ReactToastify.css";
-import "react-loading-skeleton/dist/skeleton.css";
 
 import { Analytics } from "@vercel/analytics/react";
 import type { AppProps } from "next/app";
