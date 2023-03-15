@@ -2542,9 +2542,9 @@ eslint-config-next@13.2.4:
     eslint-plugin-react-hooks "^4.5.0"
 
 eslint-config-prettier@^8.6.0:
-  version "8.6.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.6.0.tgz#dec1d29ab728f4fa63061774e1672ac4e363d207"
-  integrity sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==
+  version "8.7.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.7.0.tgz#f1cc58a8afebc50980bd53475451df146c13182d"
+  integrity sha512-HHVXLSlVUhMSmyW4ZzEuvjpwqamgmlfkutD53cYXLikh4pt/modINRcCIApJ84czDxM4GZInwUrromsDdTImTA==
 
 eslint-import-resolver-node@^0.3.6, eslint-import-resolver-node@^0.3.7:
   version "0.3.7"
@@ -2655,9 +2655,9 @@ eslint-plugin-sort-keys-custom-order@^1.0.5:
   integrity sha512-WdZjCY/nyOjr4GnMvQTiH225sQ0+LvmoZBB7cPkSvhbx7FxKCk3pwn8UTKquSdSRsvPiM2qoUvIOPDAEdOJdkA==
 
 eslint-plugin-tailwindcss@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-tailwindcss/-/eslint-plugin-tailwindcss-3.9.0.tgz#d6acde1bdbcfc6e1e44a6b1a60cc24146fbfa4fe"
-  integrity sha512-uA2/Q0g22i1uGFI/FTBkLCvpc5VpzMZjAJn3/hPqhongG0V7aaRHrFx4LyfOje/b9Q/t9iarx40InrXKf2jC6w==
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-tailwindcss/-/eslint-plugin-tailwindcss-3.10.1.tgz#727193f78cc22b9b358ef5f99de2177d173a5209"
+  integrity sha512-NLPZ6b6nd/8CgGNMQ6NDiPUfBLQpSGu/u9RyX3MCZOwzNs2dFt1OamNAiRuo3Ixh7Gv4t5UcAcdNt8z74UDJkA==
   dependencies:
     fast-glob "^3.2.5"
     postcss "^8.4.4"
