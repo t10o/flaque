@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "yarn codegen && next build",
+    "build": "yarn codegen && next build && next-sitemap --config sitemap.config.js",
     "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint",
