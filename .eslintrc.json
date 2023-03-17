@@ -22,5 +22,6 @@
       "groupByResponsive": true,
       "whitelist": []
     }
-  }
+  },
+  "ignorePatterns": ["*.config.js"]
 }
