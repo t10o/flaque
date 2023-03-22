@@ -15,7 +15,9 @@ export const BlogTag = ({ label }: Props): JSX.Element => {
         "mr-4",
         "text-primary",
         "text-sm",
-        "font-light"
+        "font-light",
+        "hover:shadow-down",
+        "hover:cursor-pointer"
       )}
     >
       {label}

@@ -47,7 +47,14 @@ export const BlogCard = ({
       <div
         className={clsx("flex", "flex-col", "justify-end", "overflow-hidden")}
       >
-        <div className={clsx("text-lg", "font-semibold", "mb-auto")}>
+        <div
+          className={clsx(
+            "text-lg",
+            "font-semibold",
+            "mb-auto",
+            "hover:text-primary"
+          )}
+        >
           {title}
         </div>
 
