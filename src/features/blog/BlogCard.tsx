@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import twemoji from "twemoji";
 
+import { BlogTag } from "@/features/blog/BlogTag";
+
 interface Props {
   title: string;
   date: string;
@@ -53,11 +55,7 @@ export const BlogCard = ({
 
         <div className={clsx("flex", "items-center", "mt-2")}>
           {tags.map((tag) => {
-            return (
-              <div className={clsx("mr-2")} key={tag}>
-                {tag}
-              </div>
-            );
+            return <BlogTag key={tag} label={tag} />;
           })}
         </div>
       </div>
