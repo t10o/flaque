@@ -113,7 +113,8 @@ export const Contact = (): JSX.Element => {
             "text-lg",
             "bg-gradient-to-r",
             "from-purple-500",
-            "to-pink-500"
+            "to-pink-500",
+            "shadow-up"
           )}
           type="submit"
           label="Submit"
