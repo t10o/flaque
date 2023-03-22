@@ -15,7 +15,7 @@ export const BlogTag = ({ label }: Props): JSX.Element => {
         "mr-4",
         "text-primary",
         "text-sm",
-        "font-thin"
+        "font-light"
       )}
     >
       {label}
