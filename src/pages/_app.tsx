@@ -4,7 +4,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { Analytics } from "@vercel/analytics/react";
 import type { AppProps } from "next/app";
-import { Noto_Sans_Javanese } from "next/font/google";
 import Head from "next/head";
 import Script from "next/script";
 import { DefaultSeo } from "next-seo";
@@ -12,8 +11,6 @@ import { ToastContainer } from "react-toastify";
 
 import { Layout } from "@/components/layouts";
 import * as gtag from "@/lib/gtag";
-
-const notoSansJapanese = Noto_Sans_Javanese({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -64,12 +61,6 @@ export default function App({ Component, pageProps }: AppProps) {
         pauseOnHover
         theme="light"
       />
-
-      <style jsx global>{`
-        html {
-          font-family: ${notoSansJapanese.style.fontFamily};
-        }
-      `}</style>
 
       <Layout>
         <Component {...pageProps} />

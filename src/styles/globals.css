@@ -11,6 +11,7 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: #eeeef1;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 h1 {
