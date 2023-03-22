@@ -3,6 +3,7 @@ import NextImage from "next/image";
 import ReactMarkdown from "react-markdown";
 import twemoji from "twemoji";
 
+import { BlogTag } from "@/features/blog/BlogTag";
 import { PostQuery } from "@/gql/graphql";
 
 interface Props {
@@ -38,11 +39,7 @@ export const BlogContent = ({ blog }: Props): JSX.Element => {
 
         <div className={clsx("flex", "mb-8")}>
           {blog.post!.tags.map((tag) => {
-            return (
-              <div className={clsx("mr-2")} key={tag}>
-                {tag}
-              </div>
-            );
+            return <BlogTag key={tag} label={tag} />;
           })}
         </div>
 
