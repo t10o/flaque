@@ -28,7 +28,7 @@ export const BlogCard = ({
   return (
     <Link
       className={clsx("flex", "p-4", "rounded-lg", "shadow-up", "col-span-1")}
-      href={`blog/${slug}`}
+      href={`/blog/post/${slug}`}
     >
       <div
         className={clsx(

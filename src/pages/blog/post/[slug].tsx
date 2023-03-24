@@ -59,7 +59,7 @@ export const getStaticPaths = async () => {
   });
 
   const paths = data.posts.map((post) => {
-    return `/blog/${post.slug}`;
+    return `/blog/post/${post.slug}`;
   });
 
   return { fallback: false, paths };
