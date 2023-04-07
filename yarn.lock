@@ -526,14 +526,14 @@
   integrity sha512-PX90bEnrLdxd5e6rSFWsghExMuSw0Uov3fWJuuaoFuUQIS/446diu/4seExK5b+43L+SOBbd2uBGwYUkG1JfCw==
 
 "@emailjs/browser@^3.10.0":
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/@emailjs/browser/-/browser-3.10.0.tgz#74de36d95838e117cf76f7b71b68ffbe5668367d"
-  integrity sha512-pregUOBkSjjctQoAgn8DcSaeY4ypHjXAJEzWlJysM3RkQXw1ulavfHva3YYeAkxfJ7qbIhpyvRmhyQlgNG4GVg==
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/@emailjs/browser/-/browser-3.11.0.tgz#0e78de2f85096d1a9ad5b5977b060bb5d1784cb4"
+  integrity sha512-RkY3FKZ3fPdK++OeF46mRTFpmmQWCHUVHZH209P3NE4D5sg2Atg7S2wa3gw5062Gl4clt4Wn5SyC4WhlVZC5pA==
 
 "@eslint-community/eslint-utils@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@eslint-community/eslint-utils/-/eslint-utils-4.2.0.tgz#a831e6e468b4b2b5ae42bf658bea015bf10bc518"
-  integrity sha512-gB8T4H4DEfX2IV9zGDJPOBgP1e/DbfCPDTtEqUMckpvzS1OYtva8JdFYBqMwYk7xAQ429WGF/UPqn8uQ//h2vQ==
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz#a23514e8fb9af1269d5f7788aa556798d61c6b59"
+  integrity sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==
   dependencies:
     eslint-visitor-keys "^3.3.0"
 
