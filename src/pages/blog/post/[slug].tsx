@@ -32,7 +32,7 @@ export const BlogContentPage: NextPage<Props> = ({ data }) => {
         openGraph={{
           title: meta.title,
           description: meta.description,
-          url: `https://flaque.t10o.one/blog/${meta.slag}}`,
+          url: `https://flaque.t10o.one/blog/post/${meta.slag}}`,
         }}
       />
 
