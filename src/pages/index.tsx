@@ -1,48 +1,19 @@
-import { gql } from "@apollo/client";
 import { GetStaticProps, NextPage } from "next";
 
 import { ContentLayout } from "@/components/layouts";
-import { Blog } from "@/features/blog";
-import { PostsQuery } from "@/gql/graphql";
-import { initializeApollo } from "@/lib/apolloClient";
+import { About } from "@/features/about";
 
-interface Props {
-  data: PostsQuery;
-}
-
-export const Home: NextPage<Props> = ({ data }) => {
+export const Home: NextPage = () => {
   return (
     <ContentLayout>
-      <Blog blogList={data} />
+      <About />
     </ContentLayout>
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const QUERY = gql`
-    query Posts {
-      posts {
-        id
-        title
-        slug
-        emoji
-        tags
-        date
-      }
-    }
-  `;
-
-  const client = initializeApollo();
-
-  const { data } = await client.query<PostsQuery>({
-    query: QUERY,
-  });
-
+export const getStaticProps: GetStaticProps = () => {
   return {
-    props: {
-      data,
-    },
-    revalidate: 60,
+    props: {},
   };
 };
 
