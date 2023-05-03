@@ -19,7 +19,8 @@ export const ProfileCard = ({ children }: Props) => {
         "col-span-1",
         "py-10",
         "px-10",
-        "max-w-4xl",
+        "max-w-2xl",
+        "lg:max-w-4xl",
         "mx-auto",
         "shadow-up",
         "rounded-lg"
