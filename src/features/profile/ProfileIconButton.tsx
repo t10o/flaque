@@ -8,7 +8,7 @@ interface Props {
   icon: IconDefinition;
 }
 
-export const AboutIconButton = ({ color, href, icon }: Props) => {
+export const ProfileIconButton = ({ color, href, icon }: Props) => {
   return (
     <a href={href} target="_blank">
       <div

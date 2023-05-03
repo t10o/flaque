@@ -1,8 +1,8 @@
 import { GetStaticProps, NextPage } from "next";
 import { NextSeo } from "next-seo";
+import { Profile } from "src/features/profile";
 
 import { ContentLayout } from "@/components/layouts";
-import { About } from "@/features/about";
 
 export const AboutPage: NextPage = () => {
   return (
@@ -18,7 +18,7 @@ export const AboutPage: NextPage = () => {
       />
 
       <ContentLayout pageTitle="About">
-        <About />
+        <Profile />
       </ContentLayout>
     </>
   );

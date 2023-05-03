@@ -1,22 +1,12 @@
 import clsx from "clsx";
 
 import { SOCIAL_ACCOUNTS } from "@/constants/social-accounts";
-import { AboutIconButton } from "@/features/about/AboutIconButton";
+import { ProfileCard } from "@/features/profile/ProfileCard";
+import { ProfileIconButton } from "@/features/profile/ProfileIconButton";
 
-export const About = (): JSX.Element => {
+export const Profile = (): JSX.Element => {
   return (
-    <div
-      className={clsx(
-        "flex",
-        "col-span-1",
-        "py-10",
-        "px-10",
-        "max-w-4xl",
-        "mx-auto",
-        "shadow-up",
-        "rounded-lg"
-      )}
-    >
+    <ProfileCard>
       <div
         className={clsx(
           "rounded-full",
@@ -45,7 +35,7 @@ export const About = (): JSX.Element => {
 
         <div className={clsx("flex")}>
           {SOCIAL_ACCOUNTS.map((socialAccount) => (
-            <AboutIconButton
+            <ProfileIconButton
               key={socialAccount.href}
               color={socialAccount.color}
               href={socialAccount.href}
@@ -54,8 +44,8 @@ export const About = (): JSX.Element => {
           ))}
         </div>
       </div>
-    </div>
+    </ProfileCard>
   );
 };
 
-About.displayName = "About";
+Profile.displayName = "About";
