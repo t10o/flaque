@@ -10,6 +10,12 @@ export const ProfileCard = ({ children }: Props) => {
     <div
       className={clsx(
         "flex",
+        "flex-col",
+        "justify-center",
+        "items-center",
+        "lg:flex-row",
+        "lg:justify-start",
+        "lg:items-start",
         "col-span-1",
         "py-10",
         "px-10",

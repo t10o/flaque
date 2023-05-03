@@ -16,7 +16,9 @@ export const Profile = (): JSX.Element => {
           "flex",
           "justify-center",
           "items-center",
-          "mr-10"
+          "mr-10",
+          "mb-6",
+          "lg:mb-0"
         )}
       >
         アイコン欲しい
@@ -31,7 +33,7 @@ export const Profile = (): JSX.Element => {
           フロントエンドエンジニア（自称）
         </p>
 
-        <p className={clsx("mb-auto")}>浅瀬でパチャついてます。</p>
+        <p className={clsx("mb-6")}>浅瀬でパチャついてます。</p>
 
         <div className={clsx("flex")}>
           {SOCIAL_ACCOUNTS.map((socialAccount) => (
