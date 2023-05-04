@@ -60,6 +60,9 @@
     "prettier": "^2.8.4",
     "tailwindcss": "^3.2.7"
   },
+  "resolutions": {
+    "@types/react": "18.2.4"
+  },
   "volta": {
     "node": "18.16.0",
     "yarn": "1.22.19"
