@@ -44,3 +44,8 @@ next-env.d.ts
 # gql generated
 src/gql
 graphql.schema.json
+
+# sitemap
+public/robots.txt
+public/sitemap.xml
+public/sitemap-0.xml
