@@ -15,6 +15,7 @@
     "@babel/core": "^7.21.8",
     "@emailjs/browser": "^3.10.0",
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@hookform/resolvers": "^3.0.1",
@@ -39,7 +40,6 @@
     "zod": "^3.20.6"
   },
   "devDependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.4.0",
     "@graphql-codegen/cli": "3.3.1",
     "@graphql-codegen/client-preset": "3.0.1",
     "@graphql-codegen/introspection": "3.0.1",
