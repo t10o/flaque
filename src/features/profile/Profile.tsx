@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import NextImage from "next/image";
 
 import { SOCIAL_ACCOUNTS } from "@/constants/social-accounts";
 import { ProfileCard } from "@/features/profile/ProfileCard";
@@ -8,20 +9,14 @@ export const Profile = (): JSX.Element => {
   return (
     <ProfileCard>
       <div
-        className={clsx(
-          "rounded-full",
-          "border-2",
-          "w-48",
-          "h-48",
-          "flex",
-          "justify-center",
-          "items-center",
-          "mr-10",
-          "mb-6",
-          "lg:mb-0"
-        )}
+        className={clsx("w-48", "h-48", "relative", "mr-10", "mb-6", "lg:mb-0")}
       >
-        アイコン欲しい
+        <NextImage
+          className={clsx("rounded-full")}
+          src="/profile.jpeg"
+          alt="profile"
+          fill
+        />
       </div>
 
       <div
