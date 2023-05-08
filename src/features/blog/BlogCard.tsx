@@ -60,7 +60,7 @@ export const BlogCard = ({
 
         <div>{date}</div>
 
-        <div className={clsx("flex", "items-center", "mt-2")}>
+        <div className={clsx("flex", "items-center", "mt-2", "mb-1")}>
           {tags.map((tag) => {
             return <BlogTag key={tag} label={tag} />;
           })}
