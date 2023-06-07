@@ -21,7 +21,7 @@
     "@hookform/resolvers": "^3.0.1",
     "@next/env": "^13.4.1",
     "@types/node": "20.0.0",
-    "@types/react": "18.2.8",
+    "@types/react": "18.2.9",
     "@types/react-burger-menu": "^2.8.3",
     "@types/react-dom": "18.2.4",
     "@vercel/analytics": "1.0.1",
@@ -62,7 +62,7 @@
     "tailwindcss": "^3.2.7"
   },
   "resolutions": {
-    "@types/react": "18.2.8"
+    "@types/react": "18.2.9"
   },
   "volta": {
     "node": "18.16.0",
