@@ -27,7 +27,7 @@
     "@vercel/analytics": "1.0.1",
     "dotenv": "^16.0.3",
     "graphql": "^16.6.0",
-    "next": "13.4.12",
+    "next": "13.4.13",
     "next-seo": "^6.0.0",
     "react": "18.2.0",
     "react-burger-menu": "^3.0.9",
