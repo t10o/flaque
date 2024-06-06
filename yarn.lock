@@ -3135,9 +3135,9 @@ eslint-plugin-sort-keys-custom-order@^1.0.5:
   integrity sha512-WdZjCY/nyOjr4GnMvQTiH225sQ0+LvmoZBB7cPkSvhbx7FxKCk3pwn8UTKquSdSRsvPiM2qoUvIOPDAEdOJdkA==
 
 eslint-plugin-tailwindcss@^3.9.0:
-  version "3.17.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-tailwindcss/-/eslint-plugin-tailwindcss-3.17.2.tgz#bbea4018a53228dcc6c5bc5faad0091b968f44c2"
-  integrity sha512-U0hSG4z+q98e0Mot3n9zTzcTb2XRKy9xwXI36atIsAhJF/Hk7wqXptF8NBLNBaWgZPwmDmvH032Dxk2m0rHSeQ==
+  version "3.17.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-tailwindcss/-/eslint-plugin-tailwindcss-3.17.3.tgz#0cb4cf03a4415dca10389459cae34ecdbc84511b"
+  integrity sha512-DVMVVUFQ+lPraRSuUk2I41XMnusXT6b3WaQZYlUHduULnERaqe9sNfmpRY1IyxlzmKoQxSbZ8IHRhl9ePo8PeA==
   dependencies:
     fast-glob "^3.2.5"
     postcss "^8.4.4"
