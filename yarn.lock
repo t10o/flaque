@@ -1325,9 +1325,9 @@
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
 "@next/bundle-analyzer@^13.2.1":
-  version "13.5.8"
-  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-13.5.8.tgz#3d9929cb2e893e048b57f14342c053431c6b8326"
-  integrity sha512-B/6xFehMbPnBqw6Wtf0iWuOTTHAmymeKS5xKOlaEG0BrGffGZGQ3KTJycMYG6ujLG9A2uCcuTX2vd0M6F5xM3w==
+  version "13.5.9"
+  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-13.5.9.tgz#9b05ac0fba66ca7facb352a9dc51f49e6c27a2dc"
+  integrity sha512-FMGJ9OWjHKseyrNVjVIky214V/KsP8y7a+l1/ZInHdW/LhRPRvhjYb9fe8gfbPuAzfocohVX1F1GbGl//yW9bg==
   dependencies:
     webpack-bundle-analyzer "4.7.0"
 
@@ -1337,9 +1337,9 @@
   integrity sha512-Yac/bV5sBGkkEXmAX5FWPS9Mmo2rthrOPRQQNfycJPkjUAUclomCPH7QFVCDQ4Mp2k2K1SSM6m0zrxYrOwtFQw==
 
 "@next/env@^13.4.1", "@next/env@^13.4.3":
-  version "13.5.8"
-  resolved "https://registry.yarnpkg.com/@next/env/-/env-13.5.8.tgz#404d3b3e5881b6a0510500c6cc97e3589a2e6371"
-  integrity sha512-YmiG58BqyZ2FjrF2+5uZExL2BrLr8RTQzLXNDJ8pJr0O+rPlOeDPXp1p1/4OrR3avDidzZo3D8QO2cuDv1KCkw==
+  version "13.5.9"
+  resolved "https://registry.yarnpkg.com/@next/env/-/env-13.5.9.tgz#3298c57c9ad9f333774484e03cf20fba90cd79c4"
+  integrity sha512-h9+DconfsLkhHIw950Som5t5DC0kZReRRVhT4XO2DLo5vBK3PQK6CbFr8unxjHwvIcRdDvb8rosKleLdirfShQ==
 
 "@next/eslint-plugin-next@13.5.9":
   version "13.5.9"
@@ -1747,9 +1747,9 @@ acorn-walk@^8.0.0:
     acorn "^8.11.0"
 
 acorn@^8.0.4, acorn@^8.11.0:
-  version "8.14.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.14.0.tgz#063e2c70cac5fb4f6467f0b11152e04c682795b0"
-  integrity sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==
+  version "8.14.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.14.1.tgz#721d5dc10f7d5b5609a891773d47731796935dfb"
+  integrity sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==
 
 acorn@^8.9.0:
   version "8.9.0"
