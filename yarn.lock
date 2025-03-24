@@ -1325,16 +1325,21 @@
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
 "@next/bundle-analyzer@^13.2.1":
-  version "13.5.9"
-  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-13.5.9.tgz#9b05ac0fba66ca7facb352a9dc51f49e6c27a2dc"
-  integrity sha512-FMGJ9OWjHKseyrNVjVIky214V/KsP8y7a+l1/ZInHdW/LhRPRvhjYb9fe8gfbPuAzfocohVX1F1GbGl//yW9bg==
+  version "13.5.10"
+  resolved "https://registry.yarnpkg.com/@next/bundle-analyzer/-/bundle-analyzer-13.5.10.tgz#efe96d8acab10bbe31c700a9977711c5182857ee"
+  integrity sha512-3+64XsLGHR+8Ap8yDY//hJOANvpECKXG2KdnCAk6ox3B8G8zsWvIFRx2i5nLxc/eKJDZdFtmkCwzY81l0u/Dng==
   dependencies:
     webpack-bundle-analyzer "4.7.0"
 
-"@next/env@13.5.9", "@next/env@^13.4.1", "@next/env@^13.4.3":
+"@next/env@13.5.9", "@next/env@^13.4.3":
   version "13.5.9"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-13.5.9.tgz#3298c57c9ad9f333774484e03cf20fba90cd79c4"
   integrity sha512-h9+DconfsLkhHIw950Som5t5DC0kZReRRVhT4XO2DLo5vBK3PQK6CbFr8unxjHwvIcRdDvb8rosKleLdirfShQ==
+
+"@next/env@^13.4.1":
+  version "13.5.10"
+  resolved "https://registry.yarnpkg.com/@next/env/-/env-13.5.10.tgz#190fcd4d5d6a1b14ccd8728785cef1922410021a"
+  integrity sha512-hTJtmiuQZk9qcz2qdVdNuOUSv5AjRLDvnPJ6b73g97yc9zgC0ybiNz7+/HlDUZHSs5aWup11Dw9cDREyRhJAvw==
 
 "@next/eslint-plugin-next@13.5.10":
   version "13.5.10"
