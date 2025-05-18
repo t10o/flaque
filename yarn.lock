@@ -4974,9 +4974,9 @@ natural-compare@^1.4.0:
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
 next-seo@^6.0.0:
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-6.6.0.tgz#10c6278cc3be51f9db1ede6780812e5664742974"
-  integrity sha512-0VSted/W6XNtgAtH3D+BZrMLLudqfm0D5DYNJRXHcDgan/1ZF1tDFIsWrmvQlYngALyphPfZ3ZdOqlKpKdvG6w==
+  version "6.7.0"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-6.7.0.tgz#35685231202d8feddc0e14dcafc1bb302d9aca31"
+  integrity sha512-iY0uTNzUOH1+0NDHYmyshwI9w0jtW6QmVZRrpnRRtLETDmD7jguWe8eW8SL78xu8CvsAB3ixbISkJfKgzeBNKA==
 
 next-sitemap@^4.0.5:
   version "4.2.3"
