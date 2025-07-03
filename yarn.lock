@@ -7402,6 +7402,6 @@ zen-observable@0.8.15:
   integrity sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==
 
 zod@^3.20.6:
-  version "3.25.69"
-  resolved "https://registry.yarnpkg.com/zod/-/zod-3.25.69.tgz#bf63dd5b91b28a02424395e13cb1abf5146d9084"
-  integrity sha512-cjUx+boz8dfYGssYKLGNTF5VUF6NETpcZCDTN3knhUUXQTAAvErzRhV3pgeCZm2YsL4HOwtEHPonlsshPu2I0A==
+  version "3.25.70"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.25.70.tgz#1ce9aadf89566b82816d101c35f3724d21f8bbfc"
+  integrity sha512-2WWzL2X2GpPU6as2xK1HFb6U5BZdJMdpB5Qtlan4a1KLYcZ6Gvox+mqZpxOd66sfe5AP3pEWpd2BC3f0yLH/nQ==
